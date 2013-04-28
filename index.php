@@ -41,9 +41,9 @@ class GridData{
 
 $o = new GridData();
 if(isset($_GET["id"])){
-	echo json_encode($o->get($_GET["id"], $_GET["cols"], $_GET["rows"]));
+	echo "jsonp_callback(" . json_encode($o->get($_GET["id"], $_GET["cols"], $_GET["rows"])) . ")";
 } else {
-	echo json_encode($o->get(null, $_GET["cols"], $_GET["rows"]));
+	echo "jsonp_callback(" . json_encode($o->get(null, $_GET["cols"], $_GET["rows"])) . ")";
 }
 
 ?>
