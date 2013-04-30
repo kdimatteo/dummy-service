@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Return data for an Data Grid development
+ * Concept respectfully borrowed from @fbrullo
+ * @todo: make jsonp optional
+ * @todo: better approach for handling ticker/id
+ */
+
 class GridData{ 
 	var $return;
 	var $chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZ";
@@ -40,6 +47,8 @@ class GridData{
 }
 
 $o = new GridData();
+
+// for our testing purposes, we either want to include a sample ticker ID or not.
 if(isset($_GET["id"])){
 	echo  $_GET["callback"] . "(" . json_encode($o->get($_GET["id"], $_GET["cols"], $_GET["rows"])) . ")";
 } else {
