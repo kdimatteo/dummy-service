@@ -35,7 +35,7 @@ class GridData{
 			} else {
 				$row[0] = $this->getRandomString(3);
 			}
-			$row["isExpanded"] = 0;
+			//$row["isExpanded"] = 0;
 
 			for($j=1; $j<$cols; $j++){
 				$row[$j] = (string)$this->getRandomValue();
