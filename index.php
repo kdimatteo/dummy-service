@@ -29,14 +29,11 @@ class GridData{
 		$returnObj = array();
 		for($i=1; $i<=$rows; $i++){
 			$row = array();
-			
 			if(isset($id)){
 				$row[0] = $id;
 			} else {
 				$row[0] = $this->getRandomString(3);
 			}
-			//$row["isExpanded"] = 0;
-
 			for($j=1; $j<$cols; $j++){
 				$row[$j] = (string)$this->getRandomValue();
 			}
