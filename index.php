@@ -32,7 +32,7 @@ class GridData{
 			if(isset($id)){
 				$row[0] = $id;
 			} else {
-				$row[0] = $this->getRandomString(3);
+				$row[0] = $this->getRandomString(4);
 			}
 			for($j=1; $j<$cols; $j++){
 				$row[$j] = (string)$this->getRandomValue();
