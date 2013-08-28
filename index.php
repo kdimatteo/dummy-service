@@ -49,9 +49,17 @@ header('Content-Type: application/javascript');
 
 // for our testing purposes, we either want to include a sample ticker ID or not.
 if(isset($_GET["id"])){
-	echo  $_GET["callback"] . "(" . json_encode($o->get($_GET["id"], $_GET["cols"], $_GET["rows"])) . ")";
+	$forcedID = $_GET["id"];
 } else {
-	echo  $_GET["callback"] . "(" . json_encode($o->get(null, $_GET["cols"], $_GET["rows"])) . ")";
+	$forcedID = null;
 }
+
+// return JSON or JSONP
+if (isset($_GET["callback"])){
+	echo $_GET["callback"] . "(" . json_encode($o->get($forcedID, $_GET["cols"], $_GET["rows"])) . ")";
+} else {
+	echo json_encode($o->get($forcedID, $_GET["cols"], $_GET["rows"]));
+}
+
 
 ?>
