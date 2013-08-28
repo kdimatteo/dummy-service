@@ -1,10 +1,8 @@
 <?php
 
 /**
- * Return data for an Data Grid development
+ * Return data for Data Grid evaluation and development
  * Concept respectfully borrowed from @fbrullo
- * @todo: make jsonp optional
- * @todo: better approach for handling ticker/id
  */
 
 class GridData{ 
