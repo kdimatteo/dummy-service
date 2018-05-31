@@ -1,7 +1,9 @@
 var randomWords = require('random-words');
-var express = require('express');
-var app = express();
-var cors = require('cors');
+var express     = require('express');
+var app         = express();
+var cors        = require('cors');
+
+const PORT = 3000;
 
 function generateResult(num) {
   let returnObj = [];
@@ -20,10 +22,12 @@ function generateResult(num) {
 
 app.use(cors());
 
-app.get('/:num', function (req, res) {
+app.get('/:num',  (req, res) => {
   let r = generateResult(req.params.num);
   res.send(r);
 })
 
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log(`Dummy Service listening on port ${PORT}`)
+});
